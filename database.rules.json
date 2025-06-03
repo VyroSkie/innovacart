@@ -1,0 +1,34 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "products": {
+      ".read": true,
+      ".write": "auth != null && root.child('admins').hasChild(auth.uid)"
+    },
+    "orders": {
+      ".read": "auth != null",
+      ".write": "auth != null",
+      "$orderId": {
+        ".read": "auth != null && (data.child('userId').val() === auth.uid || root.child('admins').hasChild(auth.uid))",
+        ".write": "auth != null && (!data.exists() || data.child('userId').val() === auth.uid || root.child('admins').hasChild(auth.uid))"
+      }
+    },
+    "coupons": {
+      ".read": "auth != null",
+      ".write": "auth != null && root.child('admins').hasChild(auth.uid)"
+    },
+    "reviews": {
+      ".read": true,
+      ".write": "auth != null"
+    },
+    "settings": {
+      ".read": true,
+      ".write": "auth != null && root.child('admins').hasChild(auth.uid)"
+    },
+    "admins": {
+      ".read": "auth != null && root.child('admins').hasChild(auth.uid)",
+      ".write": "auth != null && root.child('admins').hasChild(auth.uid)"
+    }
+  }
+}

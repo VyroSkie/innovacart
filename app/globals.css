@@ -1,0 +1,330 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 0 0% 9%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 0% 83.1%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Dark theme styles */
+.dark-theme {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+  min-height: 100vh;
+}
+
+/* Premium card styles with purple accents */
+.premium-card {
+  @apply bg-gray-900/50 border border-purple-500/20 rounded-lg backdrop-blur-sm;
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.8) 0%, rgba(31, 41, 55, 0.6) 100%);
+  box-shadow: 0 8px 32px rgba(168, 85, 247, 0.1);
+  transition: all 0.3s ease;
+}
+
+.premium-card:hover {
+  @apply border-purple-500/40;
+  box-shadow: 0 12px 40px rgba(168, 85, 247, 0.2);
+  transform: translateY(-2px);
+}
+
+/* Custom styles for the elegant theme */
+.gradient-bg {
+  background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
+  min-height: 100vh;
+}
+
+.elegant-card {
+  @apply bg-gray-900/50 border border-purple-500/20 backdrop-blur-sm;
+  @apply hover:border-purple-500/40 transition-all duration-300;
+  @apply shadow-lg hover:shadow-purple-500/10;
+}
+
+.elegant-product-card {
+  @apply bg-gray-900/60 border border-purple-500/30 backdrop-blur-sm;
+  @apply hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/20;
+  @apply transition-all duration-300 transform hover:-translate-y-1;
+}
+
+.elegant-text {
+  @apply text-gray-100;
+}
+
+.elegant-text-muted {
+  @apply text-gray-400;
+}
+
+.elegant-input {
+  @apply bg-gray-800/50 border-purple-500/30 text-gray-100;
+  @apply focus:border-purple-500 focus:ring-purple-500/20;
+  @apply placeholder:text-gray-500;
+}
+
+.elegant-button {
+  @apply bg-purple-600 hover:bg-purple-700 text-white;
+  @apply border-0 shadow-lg hover:shadow-purple-500/25;
+  @apply transition-all duration-300;
+}
+
+.elegant-border-red {
+  @apply border-purple-500/30 hover:border-purple-500;
+}
+
+.neon-text {
+  @apply text-purple-500;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+.neon-red {
+  @apply text-purple-500;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.3);
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:scale-105;
+  @apply hover:shadow-lg hover:shadow-purple-500/20;
+}
+
+/* Animated gradient background */
+.animated-gradient {
+  background: linear-gradient(-45deg, #0f0f23, #1a1a2e, #16213e, #2d1b69);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-purple-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-purple-500;
+}
+
+/* Glow effects */
+.glow-purple {
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+}
+
+.glow-purple-strong {
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.5);
+}
+
+/* Status indicators */
+.status-pending {
+  @apply bg-yellow-500/20 text-yellow-500 border-yellow-500/30;
+}
+
+.status-processing {
+  @apply bg-blue-500/20 text-blue-500 border-blue-500/30;
+}
+
+.status-shipped {
+  @apply bg-purple-500/20 text-purple-500 border-purple-500/30;
+}
+
+.status-delivered {
+  @apply bg-green-500/20 text-green-500 border-green-500/30;
+}
+
+.status-cancelled {
+  @apply bg-red-500/20 text-red-500 border-red-500/30;
+}
+
+/* Form enhancements */
+.elegant-select {
+  @apply bg-gray-800/50 border-purple-500/30 text-gray-100;
+}
+
+.elegant-textarea {
+  @apply bg-gray-800/50 border-purple-500/30 text-gray-100;
+  @apply focus:border-purple-500 focus:ring-purple-500/20;
+  @apply placeholder:text-gray-500;
+}
+
+/* Loading animations */
+.loading-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Hover animations */
+.hover-lift {
+  @apply transition-transform duration-300 hover:-translate-y-2;
+}
+
+.hover-glow {
+  @apply transition-all duration-300;
+}
+
+.hover-glow:hover {
+  @apply shadow-lg shadow-purple-500/25;
+  filter: brightness(1.1);
+}
+
+/* Glass morphism effects */
+.glass-card {
+  background: rgba(17, 25, 40, 0.75);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(168, 85, 247, 0.125);
+}
+
+.glass-button {
+  background: rgba(168, 85, 247, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.glass-button:hover {
+  background: rgba(168, 85, 247, 0.2);
+  border-color: rgba(168, 85, 247, 0.4);
+}
+
+/* Purple accent buttons */
+.btn-purple {
+  @apply bg-purple-600 hover:bg-purple-700 text-white transition-all duration-300;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+}
+
+.btn-purple:hover {
+  box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Purple text highlights */
+.text-purple-glow {
+  @apply text-purple-500;
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+}
+
+/* Form styles */
+.form-input {
+  @apply bg-gray-900/50 border border-purple-500/20 text-white placeholder-gray-400;
+  backdrop-filter: blur(8px);
+}
+
+.form-input:focus {
+  @apply border-purple-500/50 ring-2 ring-purple-500/20;
+}
